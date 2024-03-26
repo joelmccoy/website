@@ -3,5 +3,17 @@
 asgiref==3.8.0
     # via django
 django==5.0.3
+    # via django-extensions
+django-cockroachdb==5.0
+django-extensions==3.2.3
+psycopg==3.1.18
+psycopg-binary==3.1.18
+    # via psycopg
+psycopg-pool==3.2.1
+    # via psycopg
 sqlparse==0.4.4
     # via django
+typing-extensions==4.10.0
+    # via
+    #   psycopg
+    #   psycopg-pool
