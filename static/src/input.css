@@ -1,3 +1,18 @@
 @tailwind base;
 @tailwind components;
 @tailwind utilities;
+
+@layer utilities {
+  .square {
+    aspect-ratio: 1 / 1;
+  }
+}
+
+#card {
+  @apply w-full square p-6 bg-gradient-to-r from-ctp-overlay0 to-ctp-overlay2 rounded-3xl flex flex-col justify-center items-center outline outline-2 shadow-xl;
+}
+
+
+#card p {
+  @apply font-bold mb-4 text-center;
+}
