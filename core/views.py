@@ -1,5 +1,8 @@
 from django.shortcuts import render
+from things.models import Thing
 
 
 def home(request):
-    return render(request, "core/about.html")
+    things = Thing.objects.all()
+
+    return render(request, "core/home.html", {"things": things})
