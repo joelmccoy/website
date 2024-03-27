@@ -10,7 +10,5 @@ EXPOSE 8000
 
 RUN python manage.py collectstatic --noinput
 
-# ENTRYPOINT ["sh", "-c", "python manage.py migrate && gunicorn website.wsgi:application --bind :$PORT"]
-
-CMD ["sh", "-c", "python manage.py migrate && python manage.py runserver 0.0.0.0:$PORT"]
+ENTRYPOINT ["sh", "-c", "python manage.py migrate && gunicorn website.wsgi:application --bind :$PORT"]
 
