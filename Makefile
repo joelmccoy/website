@@ -9,7 +9,7 @@ docker-build:
 	docker build -t website:latest .
 
 docker-run: docker-build
-	docker run -p 8000:8000 website:latest
+	docker run -d -e PORT=8000 -p 8000:8000 website:latest
 
 db-up:
 	docker-compose up -d

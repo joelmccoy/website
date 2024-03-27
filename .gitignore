@@ -296,3 +296,4 @@ cockroach-data
 # Dont check in .env
 .env
 
+staticfiles

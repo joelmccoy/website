@@ -8,6 +8,7 @@ WORKDIR /app
 
 EXPOSE 8000
 
-ENTRYPOINT ["python", "manage.py"]
-CMD ["runserver", "0.0.0.0:8000"]
+RUN python manage.py collectstatic --noinput
+
+ENTRYPOINT ["sh", "-c", "python manage.py migrate && gunicorn website.wsgi:application --bind :$PORT"]
 
