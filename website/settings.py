@@ -22,10 +22,7 @@ BASE_DIR = Path(__file__).resolve().parent.parent
 
 # Quick-start development settings - unsuitable for production
 # See https://docs.djangoproject.com/en/5.0/howto/deployment/checklist/
-try:
-    SECRET_KEY = os.environ["DJANGO_SECRET_KEY"]
-except KeyError:
-    raise RuntimeError("Could not find a DJANGO_SECRET_KEY in environment")
+SECRET_KEY = os.getenv("DJANGO_SECRET_KEY")
 
 DEBUG = os.getenv("DJANGO_DEBUG", "True") == "True"
 
