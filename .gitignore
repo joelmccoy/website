@@ -292,3 +292,7 @@ dist
 
 # CochroachDB local datastore
 cockroach-data
+
+# Dont check in .env
+.env
+

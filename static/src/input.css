@@ -10,7 +10,7 @@
 
 
 #thing {
-  @apply w-full square p-6 rounded-3xl flex flex-col justify-center items-center text-ctp-text outline-double outline-4 shadow-2xl hover:scale-125 hover:animate-pulse;
+  @apply w-full square p-6 rounded-3xl flex flex-col justify-center items-center text-ctp-text outline-double outline-4 shadow-2xl hover:scale-125 hover:animate-pulse; 
 }
 
 #thing p {

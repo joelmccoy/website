@@ -19,6 +19,6 @@ module.exports = {
     "outline-ctp-teal",
     "outline-ctp-peach",
     "outline-ctp-green",
-    ]
+  ]
 };
 
