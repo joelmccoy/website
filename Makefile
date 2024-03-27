@@ -11,7 +11,13 @@ docker-build:
 docker-run: docker-build
 	docker run -p 8000:8000 website:latest
 
-migrations:
+db-up:
+	docker-compose up -d
+
+db-down:
+	docker-compose down
+
+migrations: db-up
 	python manage.py makemigrations
 	python manage.py migrate
 

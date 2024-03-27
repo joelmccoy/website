@@ -1,4 +1,5 @@
 {% extends 'core/base.html' %}
+{% load custom_filters %}
 
 {% block title %}Home{% endblock %}
 
@@ -18,7 +19,9 @@
 </div>
 <div class="grid grid-cols-2 sm:grid-cols-4 gap-12 mt-8 place-items-center">
   {% for thing in things %}
-  <div id="thing"><p>{{ thing }}</p></div>
+
+  
+  <div x-init="setTimeout(() => {show = true}, 5000)" x-data="{ show: false }" x-transition x-transition:enter.duration.1000ms x-show="show" id="thing" class="outline-{{ forloop.counter0|get_color }}"><p>{{ thing }}</p></div>
   {% endfor %}
 </div>
-{% endblock %}
+  {% endblock %}

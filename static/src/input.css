@@ -8,15 +8,15 @@
   }
 }
 
-#thing {
-  @apply w-full square p-6 rounded-3xl flex flex-col justify-center items-center text-ctp-text outline-double outline-4 outline-ctp-green shadow-2xl animate-pulse hover:scale-125;
-}
 
+#thing {
+  @apply w-full square p-6 rounded-3xl flex flex-col justify-center items-center text-ctp-text outline-double outline-4 shadow-2xl hover:scale-125 hover:animate-pulse;
+}
 
 #thing p {
   @apply font-bold mb-4 text-center;
 }
 
 #navbutton {
-  @apply text-ctp-text font-bold hover:text-ctp-green border-double border-4 border-ctp-overlay2 hover:border-ctp-green rounded-lg py-2 px-4;
+  @apply text-ctp-text font-bold hover:text-ctp-green border-double border-4 border-ctp-overlay2 hover:border-ctp-green rounded-lg py-2 px-4 hover:animate-pulse;
 }
