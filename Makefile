@@ -25,7 +25,7 @@ create-admin:
 	python manage.py createsuperuser
 
 bootstrap-db:
-	python manage.py runscript bootstrap_things
+	bash scripts/bootstrap_db.sh
 
 run:
 	python manage.py runserver

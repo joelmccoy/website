@@ -36,8 +36,8 @@ steps:
         "-e",
         "PORT=8000",
         "--",
-        "make",
-        "bootstrap-db",
+        "bash",
+        "scripts/bootstrap_db.sh",
       ]
 
 
