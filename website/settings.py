@@ -41,8 +41,6 @@ else:
     dotenv.load_dotenv(stream=io.StringIO(payload))
 
 
-print(os.getenv("DBNAME", "defaultdb"))
-
 # Build paths inside the project like this: BASE_DIR / 'subdir'.
 BASE_DIR = Path(__file__).resolve().parent.parent
 

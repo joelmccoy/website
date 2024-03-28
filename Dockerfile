@@ -10,5 +10,5 @@ EXPOSE 8000
 
 RUN python manage.py collectstatic --noinput
 
-CMD ["sh", "-c", "gunicorn website.wsgi:application --bind :$PORT"]
+CMD exec gunicorn --bind 0.0.0.0:$PORT --workers 1 --threads 8 --timeout 0 mysite.wsgi:application
 
