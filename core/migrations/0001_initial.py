@@ -13,9 +13,9 @@ from google.cloud import secretmanager
 def createsuperuser(apps: StateApps, schema_editor: DatabaseSchemaEditor) -> None:
     """
     Dynamically create an admin user as part of a migration
-    Password is pulled from Secret Manger (previously created as part of tutorial)
+    Password is pulled from Secret Manger
     """
-    if os.getenv("GCLOUD_PROJECT", None):
+    if not os.getenv("ADMIN_PASSWORD", None):
         client = secretmanager.SecretManagerServiceClient()
 
         # Get project value for identifying current context
