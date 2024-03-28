@@ -17,16 +17,12 @@ from urllib.parse import urlparse
 from google.cloud import secretmanager
 import io
 
-# If secrets are bootstrapped in envrinment, load them
-if secrets := os.getenv("WEBSITE_DJANGO_SECRETS", None):
-    dotenv.load_dotenv(stream=io.StringIO(secrets))
 # If a .env file exists, load it
-elif os.path.exists(".env"):
+if os.path.exists(".env"):
     dotenv.load_dotenv()
 # else get the env variables from GCP Secret Manager
-else:
+elif project_id := os.environ.get("GOOGLE_CLOUD_PROJECT", None):
     # Pull secrets from Secret Manager
-    project_id = os.environ.get("GOOGLE_CLOUD_PROJECT")
     client = secretmanager.SecretManagerServiceClient()
     settings_name = os.environ.get("SETTINGS_NAME", "django_settings")
     name = f"projects/{project_id}/secrets/{settings_name}/versions/latest"
@@ -40,7 +36,7 @@ BASE_DIR = Path(__file__).resolve().parent.parent
 
 # Quick-start development settings - unsuitable for production
 # See https://docs.djangoproject.com/en/5.0/howto/deployment/checklist/
-SECRET_KEY = os.getenv("DJANGO_SECRET_KEY")
+SECRET_KEY = os.getenv("DJANGO_SECRET_KEY", "")
 
 DEBUG = os.getenv("DJANGO_DEBUG", "True") == "True"
 
