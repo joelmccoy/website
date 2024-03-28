@@ -24,6 +24,23 @@ steps:
         "migrate",
       ]
 
+  - id: "bootstrap database with data"
+    name:
+    name: "gcr.io/google-appengine/exec-wrapper"
+    args:
+      [
+        "-i",
+        "gcr.io/$PROJECT_ID/$REPO_NAME:$COMMIT_SHA",
+        "-e",
+        "SETTINGS_NAME=${_SECRET_SETTINGS_NAME}",
+        "-e",
+        "PORT=8000",
+        "--",
+        "make",
+        "bootstrap-db",
+      ]
+
+
     # Deploy container image to Cloud Run
   - id: "deploy new image to cloud run"
     name: 'gcr.io/google.com/cloudsdktool/cloud-sdk'
