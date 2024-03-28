@@ -19,16 +19,20 @@ import io
 
 # If a .env file exists, load it
 if os.path.exists(".env"):
+    print("Loading .env file")
     dotenv.load_dotenv()
 # else get the env variables from GCP Secret Manager
 elif project_id := os.environ.get("GOOGLE_CLOUD_PROJECT", None):
     # Pull secrets from Secret Manager
+    print("Loading secrets from Secret Manager")
     client = secretmanager.SecretManagerServiceClient()
     settings_name = os.environ.get("SETTINGS_NAME", "django_settings")
     name = f"projects/{project_id}/secrets/{settings_name}/versions/latest"
     payload = client.access_secret_version(name=name).payload.data.decode("UTF-8")
     dotenv.load_dotenv(stream=io.StringIO(payload))
 
+
+print(os.getenv("DBNAME", "defaultdb"))
 
 # Build paths inside the project like this: BASE_DIR / 'subdir'.
 BASE_DIR = Path(__file__).resolve().parent.parent
@@ -118,7 +122,6 @@ DATABASES = {
         "PORT": os.getenv("DBPORT", "26257"),
     }
 }
-print(DATABASES)
 
 
 # Password validation
