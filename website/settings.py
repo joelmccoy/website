@@ -14,10 +14,13 @@ import io
 import os
 from pathlib import Path
 from urllib.parse import urlparse
+import logging
 
 import dotenv
 import google.auth
 from google.cloud import secretmanager
+
+logger = logging.getLogger(__name__)
 
 # Attempt to load the Project ID into the environment, safely failing on error.
 try:
@@ -27,13 +30,13 @@ except google.auth.exceptions.DefaultCredentialsError:  # type: ignore
 
 # If a .env file exists, load it
 if os.path.exists(".env"):
-    print("Loading .env file")
+    logger.info("Loading .env file")
     dotenv.load_dotenv()
 # else get the env variables from GCP Secret Manager
 else:
     # Pull secrets from Secret Manager
     project_id = os.environ.get("GOOGLE_CLOUD_PROJECT", None)
-    print("Loading secrets from Secret Manager")
+    logger.info("Loading secrets from Secret Manager")
     client = secretmanager.SecretManagerServiceClient()
     settings_name = os.environ.get("SETTINGS_NAME", "website_django_secrets")
     name = f"projects/{project_id}/secrets/{settings_name}/versions/latest"
@@ -174,3 +177,20 @@ STATICFILES_DIRS = [
 # https://docs.djangoproject.com/en/5.0/ref/settings/#default-auto-field
 
 DEFAULT_AUTO_FIELD = "django.db.models.BigAutoField"
+
+LOGGING = {
+    "version": 1,
+    "disable_existing_loggers": False,
+    "handlers": {
+        "console": {
+            "level": "DEBUG",
+            "class": "logging.StreamHandler",
+        },
+    },
+    "loggers": {
+        "": {
+            "handlers": ["console"],
+            "level": "DEBUG",
+        },
+    },
+}
