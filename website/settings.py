@@ -17,9 +17,11 @@ from urllib.parse import urlparse
 from google.cloud import secretmanager
 import io
 
-
+# If secrets are bootstrapped in envrinment, load them
+if secrets := os.getenv("WEBSITE_DJANGO_SECRETS", None):
+    dotenv.load_dotenv(stream=io.StringIO(secrets))
 # If a .env file exists, load it
-if os.path.exists(".env"):
+elif os.path.exists(".env"):
     dotenv.load_dotenv()
 # else get the env variables from GCP Secret Manager
 else:
