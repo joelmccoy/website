@@ -118,6 +118,7 @@ DATABASES = {
         "PORT": os.getenv("DBPORT", "26257"),
     }
 }
+print(DATABASES)
 
 
 # Password validation
