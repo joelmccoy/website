@@ -28,14 +28,14 @@ def createsuperuser(apps: StateApps, schema_editor: DatabaseSchemaEditor) -> Non
             "UTF-8"
         )
     else:
-        # If not running in GCP, use the defined admin password.
-        admin_password = os.getenv("ADMIN_PASSWORD", "admin")
+        # If not running in GCP, use the defined admin password in local environment
+        admin_password = os.environ["ADMIN_PASSWORD"]
 
     # Create a new user using acquired password, stripping any accidentally stored newline characters
     User.objects.create_superuser("admin", password=admin_password.strip())
 
 
 class Migration(migrations.Migration):
+    initial = True
     dependencies = []
-
-    operations = []
+    operations = [migrations.RunPython(createsuperuser)]
