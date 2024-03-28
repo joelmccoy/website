@@ -14,8 +14,23 @@ import os
 from pathlib import Path
 import dotenv
 from urllib.parse import urlparse
+from google.cloud import secretmanager
+import io
 
-dotenv.load_dotenv()
+
+# If a .env file exists, load it
+if os.path.exists(".env"):
+    dotenv.load_dotenv()
+# else get the env variables from GCP Secret Manager
+else:
+    # Pull secrets from Secret Manager
+    project_id = os.environ.get("GOOGLE_CLOUD_PROJECT")
+    client = secretmanager.SecretManagerServiceClient()
+    settings_name = os.environ.get("SETTINGS_NAME", "django_settings")
+    name = f"projects/{project_id}/secrets/{settings_name}/versions/latest"
+    payload = client.access_secret_version(name=name).payload.data.decode("UTF-8")
+    dotenv.load_dotenv(stream=io.StringIO(payload))
+
 
 # Build paths inside the project like this: BASE_DIR / 'subdir'.
 BASE_DIR = Path(__file__).resolve().parent.parent
