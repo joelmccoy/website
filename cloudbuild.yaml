@@ -37,6 +37,6 @@ options:
   logging: CLOUD_LOGGING_ONLY
 
 availableSecrets:
-  secretsManager:
+  secretManager:
     - versionName: projects/${PROJECT_ID}/secrets/website_django_secrets/versions/latest
       env: 'WEBSITE_DJANGO_SECRETS'
