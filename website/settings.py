@@ -10,20 +10,29 @@ For the full list of settings and their values, see
 https://docs.djangoproject.com/en/5.0/ref/settings/
 """
 
+import io
 import os
 from pathlib import Path
-import dotenv
 from urllib.parse import urlparse
+
+import dotenv
+import google.auth
 from google.cloud import secretmanager
-import io
+
+# Attempt to load the Project ID into the environment, safely failing on error.
+try:
+    _, os.environ["GOOGLE_CLOUD_PROJECT"] = google.auth.default()  # type: ignore
+except google.auth.exceptions.DefaultCredentialsError:  # type: ignore
+    pass
 
 # If a .env file exists, load it
 if os.path.exists(".env"):
     print("Loading .env file")
     dotenv.load_dotenv()
 # else get the env variables from GCP Secret Manager
-elif project_id := os.environ.get("GOOGLE_CLOUD_PROJECT", None):
+else:
     # Pull secrets from Secret Manager
+    project_id = os.environ.get("GOOGLE_CLOUD_PROJECT", None)
     print("Loading secrets from Secret Manager")
     client = secretmanager.SecretManagerServiceClient()
     settings_name = os.environ.get("SETTINGS_NAME", "django_settings")
