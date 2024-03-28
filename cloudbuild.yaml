@@ -25,7 +25,8 @@ steps:
       ]
 
     # Deploy container image to Cloud Run
-  - name: 'gcr.io/google.com/cloudsdktool/cloud-sdk'
+  - id: "deploy new image to cloud run"
+    name: 'gcr.io/google.com/cloudsdktool/cloud-sdk'
     entrypoint: gcloud
     args: ['run', 'deploy', '${_SERVICE_NAME}', '--image', 'gcr.io/$PROJECT_ID/$REPO_NAME:latest', '--region', '${_REGION}', '--platform', 'managed']
 
