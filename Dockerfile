@@ -10,5 +10,5 @@ EXPOSE 8000
 
 RUN python manage.py collectstatic --noinput
 
-ENTRYPOINT ["sh", "-c", "gunicorn website.wsgi:application --bind :$PORT"]
+CMD ["sh", "-c", "gunicorn website.wsgi:application --bind :$PORT"]
 
