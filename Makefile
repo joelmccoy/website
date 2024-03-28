@@ -1,3 +1,16 @@
+all: make-migrations format lint build
+
+make-migrations:
+	python manage.py makemigrations
+
+lint:
+	ruff check --fix
+
+format:
+	ruff format
+	
+build: docker-build
+
 refresh-reqs:
 	uv pip compile requirements.in -o requirements.txt
 
@@ -17,8 +30,7 @@ db-up:
 db-down:
 	docker-compose down
 
-migrations: db-up
-	python manage.py makemigrations
+migrations: makemigrations db-up
 	python manage.py migrate
 
 create-admin:
