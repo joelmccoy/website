@@ -39,5 +39,5 @@ options:
 
 availableSecrets:
   secretManager:
-    - versionName: projects/${PROJECT_ID}/secrets/website_django_secrets/versions/latest
+    - versionName: projects/${PROJECT_NUMBER}/secrets/website_django_secrets/versions/latest
       env: 'WEBSITE_DJANGO_SECRETS'
