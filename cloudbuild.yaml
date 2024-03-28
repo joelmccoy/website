@@ -16,6 +16,8 @@ steps:
         "gcr.io/$PROJECT_ID/$REPO_NAME:$COMMIT_SHA",
         "-e",
         "SETTINGS_NAME=${_SECRET_SETTINGS_NAME}",
+        "-e",
+        "PORT=8000",
         "--",
         "python",
         "manage.py",
