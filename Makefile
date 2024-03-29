@@ -12,7 +12,7 @@ format:
 	djlint . --reformat
 	
 check-format:
-	ruff check --format
+	ruff format --check
 	djlint . --check 
 
 build: docker-build

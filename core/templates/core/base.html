@@ -1,8 +1,12 @@
 <!DOCTYPE html>
-<html>
+<html lang="en">
     <head>
         <meta charset="utf-8">
         <meta name="viewport" content="width=device-width, initial-scale=1">
+        <meta name="description" content="Joel McCoy's personal website">
+        <meta name="author" content="Joel McCoy">
+        <meta name="keywords"
+              content="Joel McCoy, Joel, McCoy, joelmccoy, joel mccoy, personal website, software, devsecops, cloud security">
         {% load static %}
         <script defer
                 src="https://cdn.jsdelivr.net/npm/alpinejs@3.x.x/dist/cdn.min.js"></script>
@@ -22,5 +26,8 @@
                 </div>
             </main>
         </div>
+        {% block footer %}
+            {% include 'core/footer.html' %}
+        {% endblock %}
     </body>
 </html>
