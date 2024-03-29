@@ -1,27 +1,37 @@
 {% extends 'core/base.html' %}
 {% load custom_filters %}
-
 {% block title %}Home{% endblock %}
-
 {% block content %}
-<div class="grid place-items-center justify-items-center auto mt-8">
-  <h1 class="text-4xl font-bold bg-gradient-to-r bg-clip-text text-transparent from-ctp-pink to-ctp-sky">Howdy, ya'll!</h1>
-  <p class="pt-6 font-bold text-ctp-subtext0 text-center">My name is Joel McCoy.</p>
-  <p class="pt-6 font-bold text-ctp-subtext0 text-center">I am a DevSecOps / Cloud Security / Software Engineer who loves all the $THINGS.</p>
-  <p class="pt-6 text-ctp-green">$ <span class="auto-input"</p>
-  <script src="https://unpkg.com/typed.js@2.1.0/dist/typed.umd.js"></script>
-  <script>
+    <div class="grid place-items-center justify-items-center auto mt-8">
+        <h1 class="text-4xl font-bold bg-gradient-to-r bg-clip-text text-transparent from-ctp-pink to-ctp-sky">
+            Howdy, ya'll!
+        </h1>
+        <p class="pt-6 font-bold text-ctp-subtext0 text-center">My name is Joel McCoy.</p>
+        <p class="pt-6 font-bold text-ctp-subtext0 text-center">
+            I am a DevSecOps / Cloud Security / Software Engineer who loves all the $THINGS.
+        </p>
+        <p class="pt-6 text-ctp-green">
+            $ <span class="auto-input"
+        </p>
+        <script src="https://unpkg.com/typed.js@2.1.0/dist/typed.umd.js"></script>
+        <script>
   var typed = new Typed('.auto-input', {
     strings: ['echo $THINGS | display.sh'],
     typeSpeed: 150,
   });
-  </script>
-</div>
-<div class="grid grid-cols-2 sm:grid-cols-4 gap-12 mt-8 place-items-center">
-  {% for thing in things %}
-
-  
-  <div x-init="setTimeout(() => {show = true}, 5000)" x-data="{ show: false }" x-transition x-transition:enter.duration.1000ms x-show="show" id="thing" class="outline-{{ forloop.counter0|get_color }}"><p>{{ thing }}</p></div>
-  {% endfor %}
-</div>
-  {% endblock %}
+        </script>
+    </div>
+    <div class="grid grid-cols-2 sm:grid-cols-4 gap-12 mt-8 place-items-center">
+        {% for thing in things %}
+            <div x-init="setTimeout(() => {show = true}, 5000)"
+                 x-data="{ show: false }"
+                 x-transition
+                 x-transition:enter.duration.1000ms
+                 x-show="show"
+                 id="thing"
+                 class="outline-{{ forloop.counter0|get_color }}">
+                <p>{{ thing }}</p>
+            </div>
+        {% endfor %}
+    </div>
+{% endblock %}

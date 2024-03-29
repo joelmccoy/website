@@ -5,10 +5,16 @@ make-migrations:
 
 lint:
 	ruff check --fix
+	djlint .
 
 format:
 	ruff format
+	djlint . --reformat
 	
+check-format:
+	ruff check --format
+	djlint . --check 
+
 build: docker-build
 
 refresh-reqs:

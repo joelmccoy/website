@@ -1,3 +1,3 @@
 django-stubs
 ruff
-
+djlint

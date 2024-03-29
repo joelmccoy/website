@@ -1,0 +1,21 @@
+name: CI Checks
+
+on:
+  pull_request:
+    branches: [main]
+jobs:
+  lint:
+    name: Lint
+    runs-on: ubuntu-latest
+    steps:
+      - name: Checkout
+        uses: actions/checkout@v2
+      - name: Install uv
+        run: pip install uv 
+      - name: Install requirements
+        run: make install-reqs 
+      - name: Check formatting
+        run: make check-format
+      - name: Lint
+        run: make lint
+
