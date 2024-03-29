@@ -18,5 +18,5 @@
 }
 
 #navbutton {
-  @apply text-ctp-text font-bold hover:text-ctp-green border-double border-4 border-ctp-overlay2 hover:border-ctp-green rounded-lg py-2 px-4 hover:animate-pulse;
+  @apply text-ctp-text text-sm font-semibold hover:text-ctp-green border-double border-4 border-ctp-overlay2 hover:border-ctp-green rounded-lg py-2 px-3 hover:animate-pulse;
 }
