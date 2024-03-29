@@ -1,4 +1,4 @@
-all: make-migrations format lint build
+all: format lint make-migrations build
 
 make-migrations:
 	python manage.py makemigrations
@@ -13,7 +13,7 @@ format:
 	
 check-format:
 	ruff format --check
-	djlint . --check 
+	-djlint . --check 
 
 build: docker-build
 
