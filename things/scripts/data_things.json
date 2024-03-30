@@ -8,7 +8,7 @@
     "description": "I like to build things... especially in Python."
   },
   {
-    "name": "IAM",
+    "name": "IAM / Just In Time Access",
     "description": "I have a soft spot for IAM done right."
   },
   {
@@ -16,51 +16,19 @@
     "description": "Much rather build the APIs than do frontend work."
   },
   {
-    "name": "CI / CD",
-    "description": "Give me those green check marks!"
+    "name": "Python",
+    "description": "Pythonista for life."
   },
   {
     "name": "Kubernetes",
     "description": "I like good abstractions.  Kubernetes is the abstraction that any app developer needs."
   },
   {
-    "name": "Catppuccin Colorscheme",
-    "description": "I mean.... just look at this website!  Isn't she pretty??"
-  },
-  {
-    "name": "Split Key Boards",
-    "description": "Because f*** carpal tunnel syndrome."
-  },
-  {
-    "name": "NeoVim",
-    "description": "Yes... I am one of those people.  Check out my setup: https://github.com/joelmccoy/nvim-config"
-  },
-  {
-    "name": "Ultra Running",
-    "description": "I once ran 100K to see if I could... Now I am going to run 100 miles."
-  },
-  {
-    "name": "Yoga",
-    "description": "I like to do breathwork and bendy things."
-  },
-  {
     "name": "AWS",
-    "description": "Home to me is a boto3 script."
+    "description": "My head lives in the cloud."
   },
   {
-    "name": "Just In Time Access",
-    "description": "I have a passion for building applications that grant Just In Time Access."
-  },
-  {
-    "name": "Rare House Plants",
-    "description": "I probably own over 100 housplants in my appartment."
-  },
-  {
-    "name": "Handstands",
-    "description": "Handstands every d*** day"
-  },
-  {
-    "name": "Django",
-    "description": "Batteries included is a nice thing sometimes."
+    "name": "Infrastructure as Code",
+    "description": "IaC is the only way to manage infrastructure."
   }
 ]

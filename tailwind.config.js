@@ -9,7 +9,7 @@ module.exports = {
       prefix: "ctp",
       defaultFlavour: "mocha",
     }),
-  ],   
+  ],
   safelist: [
     "outline-ctp-rosewater",
     "outline-ctp-lavender",
@@ -19,6 +19,5 @@ module.exports = {
     "outline-ctp-teal",
     "outline-ctp-peach",
     "outline-ctp-green",
-  ]
+  ],
 };
-

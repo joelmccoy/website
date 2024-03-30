@@ -8,9 +8,8 @@
   }
 }
 
-
 #thing {
-  @apply w-full square p-6 rounded-3xl flex flex-col justify-center items-center text-ctp-text outline-double outline-4 shadow-2xl hover:scale-125 hover:animate-pulse; 
+  @apply w-full square p-6 rounded-3xl flex flex-col justify-center items-center text-ctp-text outline-double outline-4 shadow-2xl hover:scale-125 hover:animate-pulse;
 }
 
 #thing p {
@@ -19,4 +18,12 @@
 
 #navbutton {
   @apply text-ctp-text text-sm font-semibold hover:text-ctp-green border-double border-4 border-ctp-overlay2 hover:border-ctp-green rounded-lg py-2 px-3 hover:animate-pulse;
+}
+
+#job {
+  @apply w-full p-2 rounded-3xl py-4 text-ctp-text outline-double outline-4 shadow-2xl hover:scale-125 hover:animate-pulse;
+}
+
+#job p {
+  @apply font-bold mb-4 text-center;
 }

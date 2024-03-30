@@ -1,8 +1,16 @@
 steps:
-
   - id: "build image"
     name: "gcr.io/cloud-builders/docker"
-    args: ["build", "-t", "gcr.io/$PROJECT_ID/$REPO_NAME:$COMMIT_SHA","-t", "gcr.io/$PROJECT_ID/$REPO_NAME:latest", "--network=cloudbuild", "."]
+    args:
+      [
+        "build",
+        "-t",
+        "gcr.io/$PROJECT_ID/$REPO_NAME:$COMMIT_SHA",
+        "-t",
+        "gcr.io/$PROJECT_ID/$REPO_NAME:latest",
+        "--network=cloudbuild",
+        ".",
+      ]
 
   - id: "push image"
     name: "gcr.io/cloud-builders/docker"
@@ -25,7 +33,6 @@ steps:
       ]
 
   - id: "bootstrap database with data"
-    name:
     name: "gcr.io/google-appengine/exec-wrapper"
     args:
       [
@@ -40,16 +47,26 @@ steps:
         "scripts/bootstrap_db.sh",
       ]
 
-
     # Deploy container image to Cloud Run
   - id: "deploy new image to cloud run"
-    name: 'gcr.io/google.com/cloudsdktool/cloud-sdk'
+    name: "gcr.io/google.com/cloudsdktool/cloud-sdk"
     entrypoint: gcloud
-    args: ['run', 'deploy', '${_SERVICE_NAME}', '--image', 'gcr.io/$PROJECT_ID/$REPO_NAME:latest', '--region', '${_REGION}', '--platform', 'managed']
+    args:
+      [
+        "run",
+        "deploy",
+        "${_SERVICE_NAME}",
+        "--image",
+        "gcr.io/$PROJECT_ID/$REPO_NAME:latest",
+        "--region",
+        "${_REGION}",
+        "--platform",
+        "managed",
+      ]
 
 substitutions:
   _REGION: us-central1
-  _SERVICE_NAME: website 
+  _SERVICE_NAME: website
   _SECRET_SETTINGS_NAME: website_django_secrets
 
 images:
@@ -57,4 +74,3 @@ images:
 
 options:
   logging: CLOUD_LOGGING_ONLY
-

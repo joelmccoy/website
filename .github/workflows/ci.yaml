@@ -11,13 +11,12 @@ jobs:
       - name: Checkout
         uses: actions/checkout@v2
       - name: Install uv
-        run: pip install uv 
+        run: pip install uv
       - name: Make venv
         run: uv venv && source .venv/bin/activate && echo PATH=$PATH >> $GITHUB_ENV
       - name: Install requirements
-        run: make install-reqs 
+        run: make install-reqs
       - name: Check formatting
         run: make check-format
       - name: Lint
         run: make lint
-

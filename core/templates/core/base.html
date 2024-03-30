@@ -1,33 +1,31 @@
-<!DOCTYPE html>
+<!doctype html>
 <html lang="en">
-    <head>
-        <meta charset="utf-8">
-        <meta name="viewport" content="width=device-width, initial-scale=1">
-        <meta name="description" content="Joel McCoy's personal website">
-        <meta name="author" content="Joel McCoy">
-        <meta name="keywords"
-              content="Joel McCoy, Joel, McCoy, joelmccoy, joel mccoy, personal website, software, devsecops, cloud security">
-        {% load static %}
-        <script defer
-                src="https://cdn.jsdelivr.net/npm/alpinejs@3.x.x/dist/cdn.min.js"></script>
-        <link href="{% static 'src/styles.css' %}" rel="stylesheet">
-        <title>joelmccoy |
-            {% block title %}{% endblock %}
-        </title>
-    </head>
-    <body>
-        <div class="ctp-mocha">
-            <main class="flex flex-col min-h-screen bg-gradient-to-b from-ctp-base to-ctp-crust p-4 pb-16">
-                {% block nav %}
-                    {% include 'core/nav.html' %}
-                {% endblock %}
-                <div class="container mx-auto">
-                    {% block content %}{% endblock %}
-                </div>
-            </main>
-        </div>
-        {% block footer %}
-            {% include 'core/footer.html' %}
-        {% endblock %}
-    </body>
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <meta name="description" content="Joel McCoy's personal website" />
+    <meta name="author" content="Joel McCoy" />
+    <meta
+      name="keywords"
+      content="Joel McCoy, Joel, McCoy, joelmccoy, joel mccoy, personal website, software, devsecops, cloud security"
+    />
+    {% load static %}
+    <script
+      defer
+      src="https://cdn.jsdelivr.net/npm/alpinejs@3.x.x/dist/cdn.min.js"
+    ></script>
+    <link href="{% static 'src/styles.css' %}" rel="stylesheet" />
+    <title>joelmccoy | {% block title %}{% endblock %}</title>
+  </head>
+  <body>
+    <div class="ctp-mocha">
+      <main
+        class="flex flex-col min-h-screen bg-gradient-to-b from-ctp-base to-ctp-crust p-4 pb-16"
+      >
+        {% block nav %} {% include 'core/nav.html' %} {% endblock %}
+        <div class="container mx-auto">{% block content %}{% endblock %}</div>
+      </main>
+    </div>
+    {% block footer %} {% include 'core/footer.html' %} {% endblock %}
+  </body>
 </html>
