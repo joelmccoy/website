@@ -1,11 +1,59 @@
-{% extends 'core/base.html' %}
-{% load custom_filters %}
-{% block title %}Experience{% endblock %}
-{% block content %}
-    <div class="grid place-items-center justify-items-center auto mt-8">
-        <h1 class="text-4xl font-bold bg-gradient-to-r bg-clip-text text-transparent from-ctp-pink to-ctp-sky">
-            This page is a work in progress!
-        </h1>
-        <p class="pt-6 font-bold text-ctp-subtext0 text-center">Content coming soon!!</p>
+{% extends 'core/base.html' %} {% load custom_filters %} {% block title %}
+Experience {% endblock %} {% block content %}
+<div class="grid place-items-center justify-items-center auto mt-8">
+  <h1
+    class="text-4xl font-bold bg-gradient-to-r bg-clip-text text-transparent from-ctp-pink to-ctp-sky"
+  >
+    Job Experience / Education
+  </h1>
+  <p class="pt-6 font-bold text-xl text-ctp-subtext0 text-center">Jobs</p>
+</div>
+<div class="grid grid-cols-1 gap-12 mt-8 mx-4 md:mx-16 place-items-center">
+  {% for job in jobs %}
+  <div id="job" class="outline-{{ forloop.counter0|get_color }}">
+    <div class="grid gap-4 sm:grid-cols-3 px-2 py-2">
+      <div class="text-center font-bold text-xl rounded-2xl">
+        {{ job.company }}
+      </div>
+      <div class="text-center font-bold text-xl rounded-2xl">
+        {{ job.title }}
+      </div>
+      <div class="text-center font-bold text-xl">
+        {{ job.start_month }}/{{ job.start_year }} - {% if job.is_current %}
+        Present {% else %} {{ job.start_month }}/{{ job.end_year }} {% endif %}
+      </div>
+      <div class="text-center text-ctp-subtext0 sm:col-span-3">
+        {{ job.tagline }}
+      </div>
     </div>
+    <div class="mt-4 flex flex-wrap gap-4 justify-center">
+      {% for tag in job.tags %}
+      <div
+        class="px-4 text-center border text-ctp-green border-ctp-green font-semibold shadow-2xl rounded-2xl"
+      >
+        {{ tag }}
+      </div>
+      {% endfor %}
+    </div>
+  </div>
+  {% endfor %}
+</div>
+<p class="pt-6 font-bold text-xl text-ctp-subtext0 text-center">Education</p>
+<div class="grid grid-cols-1 gap-12 mt-8 mx-4 md:mx-16 place-items-center">
+  {% for degree in degrees %}
+  <div id="job" class="outline-{{ forloop.counter0|get_color }}">
+    <div class="grid gap-4 sm:grid-cols-3 px-2 py-2">
+      <div class="text-center font-bold text-xl rounded-2xl">
+        {{ degree.institution }}
+      </div>
+      <div class="text-center font-bold text-xl rounded-2xl">
+        {{ degree.degree_name }}
+      </div>
+      <div class="text-center font-bold text-xl">
+        {{ degree.completion_month }}/{{ degree.completion_year }}
+      </div>
+    </div>
+  </div>
+  {% endfor %}
+</div>
 {% endblock %}

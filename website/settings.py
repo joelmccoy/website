@@ -80,6 +80,7 @@ INSTALLED_APPS = [
     "django_extensions",
     "core",
     "things",
+    "experience",
 ]
 
 MIDDLEWARE = [

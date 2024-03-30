@@ -5,15 +5,14 @@ make-migrations:
 
 lint:
 	ruff check --fix
-	djlint .
 
 format:
 	ruff format
-	djlint . --reformat
+	npx prettier --write .
 	
 check-format:
 	ruff format --check
-	-djlint . --check 
+	npx prettier --check .
 
 build: docker-build
 
@@ -36,7 +35,7 @@ db-up:
 db-down:
 	docker-compose down
 
-migrations: makemigrations db-up
+migrations: make-migrations db-up
 	python manage.py migrate
 
 create-admin:

@@ -1,5 +1,6 @@
 from django.shortcuts import render
 from things.models import Thing
+from experience.models import Job, Degree
 
 
 def home(request):
@@ -13,7 +14,9 @@ def about(request):
 
 
 def experience(request):
-    return render(request, "core/experience.html")
+    jobs = Job.objects.all()
+    degrees = Degree.objects.all()
+    return render(request, "core/experience.html", {"jobs": jobs, "degrees": degrees})
 
 
 def skills(request):

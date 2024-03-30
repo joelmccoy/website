@@ -1,0 +1,109 @@
+{
+  "jobs": [
+    {
+      "company": "BridgePhase LLC",
+      "title": "Sr. DevSecOps Engineer III",
+      "tagline": "Building Secure DevOps Pipelines for the DoD's Big Data Platform.",
+      "tags": [
+        "DevSecOps",
+        "Big Data",
+        "AWS",
+        "DevOps",
+        "Azure",
+        "Ansible",
+        "Python",
+        "CI/CD",
+        "Terraform",
+        "Kubernetes",
+        "GitLab",
+        "Hadoop",
+        "Air Force"
+      ],
+      "start_month": 3,
+      "start_year": 2024,
+      "end_month": 0,
+      "end_year": 2024,
+      "is_current": true
+    },
+    {
+      "company": "Arctic Wolf",
+      "title": "Team Lead, Cloud Security Engineering",
+      "tagline": "Securing a cloud-native CyberSecurity SaaS platform by building automated security controls.",
+      "tags": [
+        "Cloud Security",
+        "AWS",
+        "Kubernetes",
+        "IAM",
+        "DevSecOps",
+        "DevOps",
+        "Python",
+        "CI/CD",
+        "Terraform",
+        "Golang",
+        "Software Development"
+      ],
+      "start_month": 12,
+      "start_year": 2022,
+      "end_month": 3,
+      "end_year": 2024,
+      "is_current": false
+    },
+    {
+      "company": "Arctic Wolf",
+      "title": "Sr. DevSecOps Engineer",
+      "tagline": "Building automated code security and platform controls for a cloud-native CyberSecurity SaaS platform.",
+      "tags": [
+        "Github Advanced Security",
+        "AWS",
+        "Kubernetes",
+        "IAM",
+        "DevSecOps",
+        "DevOps",
+        "Python",
+        "CI/CD",
+        "Terraform",
+        "Golang",
+        "Software Development"
+      ],
+      "start_month": 5,
+      "start_year": 2022,
+      "end_month": 12,
+      "end_year": 2022,
+      "is_current": false
+    },
+    {
+      "company": "United States Air Force",
+      "title": "Cyber Security Officer",
+      "tagline": "Led and managed Security Operations and other various cyber capability teams supporting the DoD.",
+      "tags": [
+        "Cyber Security",
+        "Leadership",
+        "Kubernetes",
+        "DevSecOps",
+        "Python",
+        "SIEM",
+        "Incident Response",
+        "MITRE ATT&CK"
+      ],
+      "start_month": 9,
+      "start_year": 2017,
+      "end_month": 6,
+      "end_year": 2022,
+      "is_current": false
+    }
+  ],
+  "degrees": [
+    {
+      "institution": "Georgia Institute of Technology",
+      "degree_name": "Master of Science (MS) - Computer Science",
+      "completion_month": 5,
+      "completion_year": 2022
+    },
+    {
+      "institution": "University of Pittsburgh",
+      "degree_name": "Bachelor of Science (BS) - Computer Engineering",
+      "completion_month": 4,
+      "completion_year": 2017
+    }
+  ]
+}
