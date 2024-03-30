@@ -24,4 +24,4 @@ class Degree(models.Model):
     completion_year = models.IntegerField()
 
     def __str__(self):
-        return f"{self.institution} - {self.degree}"
+        return f"{self.institution} - {self.degree_name}"

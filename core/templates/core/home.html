@@ -1,5 +1,5 @@
-{% extends 'core/base.html' %} {% load custom_filters %} {% block title %}Home{%
-endblock %} {% block content %}
+<!-- prettier-ignore -->
+{% extends 'core/base.html' %} {% load custom_filters %} {% block title %} Home {% endblock %} {% block content %}
 <div class="grid place-items-center justify-items-center auto mt-8">
   <h1
     class="text-4xl font-bold bg-gradient-to-r bg-clip-text text-transparent from-ctp-pink to-ctp-sky"
@@ -13,7 +13,7 @@ endblock %} {% block content %}
     I am a DevSecOps / Cloud Security / Software Engineer who loves all the
     $THINGS.
   </p>
-  <p class="pt-6 text-ctp-green">$ <span class="auto-input"></span></p>
+  <p class="py-6 text-ctp-green">$ <span class="auto-input"></span></p>
   <script src="https://unpkg.com/typed.js@2.1.0/dist/typed.umd.js"></script>
   <script>
     var typed = new Typed(".auto-input", {
@@ -22,7 +22,9 @@ endblock %} {% block content %}
     });
   </script>
 </div>
-<div class="grid grid-cols-1 sm:grid-cols-2 gap-16 mt-8 place-items-center">
+<div
+  class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-16 mt-8 place-items-center"
+>
   {% for thing in things %}
   <div
     x-init="setTimeout(() => {show = true}, 5000)"
