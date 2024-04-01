@@ -20,7 +20,7 @@ Experience {% endblock %} {% block content %}
       </div>
       <div class="text-center font-bold text-xl">
         {{ job.start_month }}/{{ job.start_year }} - {% if job.is_current %}
-        Present {% else %} {{ job.start_month }}/{{ job.end_year }} {% endif %}
+        Present {% else %} {{ job.end_month }}/{{ job.end_year }} {% endif %}
       </div>
       <div class="text-center text-ctp-subtext0 sm:col-span-3">
         {{ job.tagline }}
