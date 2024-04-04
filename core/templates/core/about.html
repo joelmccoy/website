@@ -4,10 +4,35 @@
   <h1
     class="text-4xl font-bold bg-gradient-to-r bg-clip-text text-transparent from-ctp-pink to-ctp-sky"
   >
-    This page is a work in progress!
+    All About Me
   </h1>
+  <div>
+    {% load static %}
+    <img
+      src="{% static 'src/images/headshot.jpeg' %}"
+      class="rounded-full w-40 h-40 mt-8 outline-ctp-green outline-double"
+    />
+  </div>
   <p class="pt-6 font-bold text-ctp-subtext0 text-center">
-    Content coming soon!!
+    Welcome to my corner of the web!
+  </p>
+  <p
+    class="outline-double outline-ctp-sky rounded-xl m-6 p-8 text-ctp-text text-justify hover:scale-105 hover:animate-pulse"
+  >
+    Hey there, I'm Joel McCoy, though you might know me by a few other titles in
+    the tech world. As a DevSecOps Engineer with a strong security focus, I'm
+    also a bit of a jack-of-all-trades. I'm skilled in crafting
+    production-quality Python code, building seamless and secure DevOps
+    pipelines, and architecting the platforms and infrastructure that developers
+    rely on. Contrary to the advice of specialization, I thrive on exploring a
+    multitude of tools and technologies. It keeps things interesting for me, and
+    I enjoy bridging the gap between Security Professionals, Developers, and
+    Infrastructure Engineers. I can easily slip into any of these roles with
+    ease. When I'm not pounding away at the keyboard, you might find me in a
+    yoga class, gearing up for an ultra marathon, or trekking through the
+    wilderness with my energetic border collie, Homie. Passionate about both my
+    work and my hobbies, I'm always eager to connect. Let's make something great
+    together!
   </p>
 </div>
 {% endblock %}
