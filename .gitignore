@@ -297,3 +297,4 @@ cockroach-data
 .env
 
 staticfiles
+.DS_Store

@@ -6,9 +6,11 @@
   >
     Howdy, ya'll!
   </h1>
-  <p class="pt-6 font-bold text-ctp-subtext0 text-center">
-    My name is Joel McCoy.
-  </p>
+  {% load static %}
+  <img
+    src="{% static 'src/images/headshot.jpeg' %}"
+    class="rounded-full w-40 h-40 mt-8 outline-ctp-green outline-double"
+  />
   <p class="pt-6 font-bold text-ctp-subtext0 text-center">
     I am a DevSecOps / Cloud Security / Software Engineer who loves all the
     $THINGS.
