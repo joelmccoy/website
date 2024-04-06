@@ -4,10 +4,29 @@ Projects {% endblock %} {% block content %}
   <h1
     class="text-4xl font-bold bg-gradient-to-r bg-clip-text text-transparent from-ctp-pink to-ctp-sky"
   >
-    This page is a work in progress!
+    Projects
   </h1>
-  <p class="pt-6 font-bold text-ctp-subtext0 text-center">
-    Content coming soon!!
-  </p>
+</div>
+<div class="m-4 grid grid-cols-1">
+  {% for project in projects %}
+  <div
+    class="hover:animate-pulse hover:scale-105 p-4 m-4 rounded-xl outline-double outline-{{ forloop.counter0|get_color }} text-center"
+  >
+    <p class="text-xl font-bold text-ctp-subtext0">{{ project.name }}</p>
+    <p class="mt-4 text-ctp-text text-center">{{ project.description }}</p>
+    <div class="p-2 m-2 text-ctp-peach hover:scale-110">
+      <a href="{{ project.github_link }}" target="_blank">GitHub</a>
+    </div>
+    <div class="mt-4 flex flex-wrap gap-4 justify-center">
+      {% for tag in project.tags %}
+      <div
+        class="px-4 text-center border text-ctp-green border-ctp-green font-semibold shadow-2xl rounded-2xl"
+      >
+        {{ tag }}
+      </div>
+      {% endfor %}
+    </div>
+  </div>
+  {% endfor %}
 </div>
 {% endblock %}

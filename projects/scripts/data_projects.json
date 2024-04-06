@@ -1,0 +1,26 @@
+[
+  {
+    "name": "pyIAMvortex",
+    "description": "An awesome python package that makes working with AWS IAM permissions easier.",
+    "github_link": "https://github.com/joelmccoy/pyiamvortex",
+    "tags": ["Python", "AWS", "IAM", "Open Source"]
+  },
+  {
+    "name": "Contributions to Moto",
+    "description": "Made significant contributions to implement the mocks for AWS IAM Identity Center (SSO) APIs in the popular AWS mocking library (Moto).",
+    "github_link": "https://github.com/getmoto/moto/pulls?q=is%3Apr+author%3Ajoelmccoy+is%3Aclosed+",
+    "tags": ["Python", "AWS", "IAM", "Open Source"]
+  },
+  {
+    "name": "My Personal Website",
+    "description": "I built this personal website!  I am no frontend developer, but I had fun building this from scratch with Django, TailwindCSS, and AlpineJS. Also shoutout to the Catppuccin Color Scheme! The website is hosted on Google Cloud Run and has CI/CD setup for automatic deployments.",
+    "github_link": "https://github.com/joelmccoy/website",
+    "tags": ["Python", "GCP", "Docker", "Django", "TailwindCSS", "AlpineJS"]
+  },
+  {
+    "name": "Kubernetes RBAC Manager Testing Example",
+    "description": "A simple example repo on how you can write Helm integrations tests to test your Kubernetes RBAC configurations.",
+    "github_link": "https://github.com/joelmccoy/k8s-test-rbacdefinitions",
+    "tags": ["Kubernetes", "Helm", "Python", "RBAC Manager"]
+  }
+]
