@@ -81,6 +81,7 @@ INSTALLED_APPS = [
     "core",
     "things",
     "experience",
+    "projects",
 ]
 
 MIDDLEWARE = [
