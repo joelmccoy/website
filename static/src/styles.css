@@ -647,6 +647,11 @@ video {
   margin-right: 2rem;
 }
 
+.mx-32 {
+  margin-left: 8rem;
+  margin-right: 8rem;
+}
+
 .ms-5 {
   margin-inline-start: 1.25rem;
 }
@@ -749,6 +754,10 @@ video {
 
 .w-48 {
   width: 12rem;
+}
+
+.w-1\/2 {
+  width: 50%;
 }
 
 .max-w-screen-2xl {
@@ -1334,8 +1343,27 @@ video {
     margin-right: 4rem;
   }
 
+  .lg\:mx-32 {
+    margin-left: 8rem;
+    margin-right: 8rem;
+  }
+
   .lg\:grid-cols-4 {
     grid-template-columns: repeat(4, minmax(0, 1fr));
+  }
+}
+
+@media (min-width: 1280px) {
+  .xl\:mx-64 {
+    margin-left: 16rem;
+    margin-right: 16rem;
+  }
+}
+
+@media (min-width: 1536px) {
+  .\32xl\:mx-96 {
+    margin-left: 24rem;
+    margin-right: 24rem;
   }
 }
 
